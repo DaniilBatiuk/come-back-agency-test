@@ -1,12 +1,19 @@
 import { createBrowserRouter, redirect } from 'react-router-dom'
 
+import { Header } from '@/components/shared'
+
 import { ROUTES } from '@/models'
 
 import { App } from './app'
 
 export const router = createBrowserRouter([
   {
-    element: <App />,
+    element: (
+      <>
+        <Header />
+        <App />
+      </>
+    ),
     children: [
       {
         path: ROUTES.CITIES,

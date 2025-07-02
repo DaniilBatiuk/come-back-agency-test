@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "paths": {
       "@/components/ui": ["./src/shared/components/ui"],
-      "@/components/shared": ["./src/shared/components/shared"],
       "@/store": ["./src/shared/store"],
       "@/lib": ["./src/shared/lib"],
       "@/actions": ["./src/shared/actions"],
@@ -13,8 +12,10 @@
       "@/validators": ["./src/shared/validators"],
       "@/hooks": ["./src/shared/hooks"],
       "@/helpers": ["./src/shared/helpers"],
+      "@/shared": ["./src/shared"],
+      "@/components/shared": ["src/shared/components/shared"],
       "@/models": ["src/shared/models"],
-      "@/pages": ["./src/pages"],
+      "@/pages": ["src/pages"],
       "@/*": ["src/*"]
     }
   }
