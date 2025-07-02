@@ -1,9 +1,10 @@
-@use '../styles/reset.scss' as reset;
-@use '../styles/variables' as var;
+@use 'styles/reset.scss' as reset;
+@use 'styles/variables.scss' as var;
 
 body {
   font-size: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var.$background;
 }
 
 .wrapper {
@@ -21,8 +22,4 @@ main {
   margin: 0px auto;
   padding: 0px 15px;
   overflow-wrap: break-word;
-}
-
-.hi {
-  background-color: red;
 }

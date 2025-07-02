@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import './index.scss'
+import './app.scss'
 
 export const App = () => {
   return (
