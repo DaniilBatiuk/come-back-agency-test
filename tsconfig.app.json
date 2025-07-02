@@ -21,7 +21,22 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/ui": ["./src/shared/components/ui"],
+      "@/components/shared": ["./src/shared/components/shared"],
+      "@/store": ["./src/shared/store"],
+      "@/lib": ["./src/shared/lib"],
+      "@/actions": ["./src/shared/actions"],
+      "@/constants": ["./src/shared/constants"],
+      "@/validators": ["./src/shared/validators"],
+      "@/hooks": ["./src/shared/hooks"],
+      "@/helpers": ["./src/shared/helpers"],
+      "@/models": ["src/shared/models"],
+      "@/pages": ["./src/pages"],
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src"]
 }

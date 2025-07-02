@@ -1,0 +1,18 @@
+//// Mixins
+
+@mixin adaptive-value-px($property, $min-size, $max-size, $max-width-px: 1440) {
+  & {
+    #{$property}: #{$max-size}px;
+  }
+  @media (max-width: #{$max-width-px}px) {
+    #{$property}: calc(
+      #{$min-size}px + #{($max-size - $min-size)} *
+        ((100vw - #{$min-width}px) / (#{($max-width-px - $min-width)}))
+    );
+  }
+}
+
+//// Variables
+
+$max-width: 1440;
+$min-width: 390;

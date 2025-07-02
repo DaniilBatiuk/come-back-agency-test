@@ -1,0 +1,28 @@
+@use '../styles/reset.scss' as reset;
+@use '../styles/variables' as var;
+
+body {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+[class*='__container'] {
+  max-width: 1440px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  overflow-wrap: break-word;
+}
+
+.hi {
+  background-color: red;
+}

@@ -1,7 +1,21 @@
 {
   "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/ui": ["./src/shared/components/ui"],
+      "@/components/shared": ["./src/shared/components/shared"],
+      "@/store": ["./src/shared/store"],
+      "@/lib": ["./src/shared/lib"],
+      "@/actions": ["./src/shared/actions"],
+      "@/constants": ["./src/shared/constants"],
+      "@/validators": ["./src/shared/validators"],
+      "@/hooks": ["./src/shared/hooks"],
+      "@/helpers": ["./src/shared/helpers"],
+      "@/models": ["src/shared/models"],
+      "@/pages": ["./src/pages"],
+      "@/*": ["src/*"]
+    }
+  }
 }
