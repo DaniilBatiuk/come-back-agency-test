@@ -1,12 +1,14 @@
-import { Link, href } from 'react-router-dom'
-
-import { ROUTES } from '@/models'
+import styles from './cities.module.scss'
+import { AddForm } from './components/add-form/add-form'
+import { CitiesList } from './components/cities-list/cities-list'
 
 function Cities() {
   return (
-    <div>
-      Cities
-      <Link to={href(ROUTES.CITY, { cityId: '1' })}>Hi</Link>
+    <div className={styles.cities}>
+      {/* Cities
+      <Link to={href(ROUTES.CITY, { cityId: '1' })}>Hi</Link> */}
+      <AddForm />
+      <CitiesList />
     </div>
   )
 }

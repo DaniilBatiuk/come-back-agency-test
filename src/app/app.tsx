@@ -1,12 +1,19 @@
 import { Outlet } from 'react-router-dom'
 
-import './app.scss'
+import { Header, ToastWrapper, WrapperProvider } from '@/components/shared'
+
+import styles from './app.module.scss'
 
 export const App = () => {
   return (
-    <div className='wrapper' id='wrapper'>
-      <div className='maon__container'>
-        <Outlet />
+    <div className={styles.wrapper} id='wrapper'>
+      <Header />
+      <div className={styles.main__container}>
+        <WrapperProvider>
+          <ToastWrapper>
+            <Outlet />
+          </ToastWrapper>
+        </WrapperProvider>
       </div>
     </div>
   )

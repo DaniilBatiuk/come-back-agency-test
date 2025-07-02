@@ -1,0 +1,9 @@
+@use 'styles/variables.scss' as var;
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include var.adaptive-value-px(gap, 40, 60);
+}
