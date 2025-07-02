@@ -3,7 +3,7 @@
 
 body {
   font-size: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var.$background;
 }
 
@@ -22,4 +22,8 @@ main {
   margin: 0px auto;
   padding: 0px 15px;
   overflow-wrap: break-word;
+}
+
+.main__container {
+  @include var.adaptive-value-px(margin-bottom, 40, 60);
 }
