@@ -1,4 +1,8 @@
+import { Link, href } from 'react-router-dom'
+
 import { kelvinToCelsius } from '@/helpers'
+
+import { ROUTES } from '@/models'
 
 import styles from './card.module.scss'
 import { DeleteButton } from './components/delete-button/delete-button'
@@ -21,6 +25,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ city }: CardProps) => {
   const imageUrl = `${import.meta.env.VITE_WEATHER_URL_ICON + city.weather[0].icon}.png`
+
   return (
     <div className={styles.card}>
       <p className={styles.card__name}>{city.name}</p>
@@ -29,6 +34,9 @@ export const Card: React.FC<CardProps> = ({ city }: CardProps) => {
       <p className={styles.card__description}>{city.weather[0].main}</p>
       <DeleteButton cityId={city.id} />
       <RefreshButton city={city} />
+      <Link to={href(ROUTES.CITY, { cityId: city.id.toString() })} className={styles.card__link}>
+        more info
+      </Link>
     </div>
   )
 }

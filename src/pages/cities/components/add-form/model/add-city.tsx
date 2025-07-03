@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { type AppThunk, citiesSlice } from '@/store'
 
 export const addCity = (city: string): AppThunk => {
-  return async (dispatch, getState, { api }) => {
+  return async (dispatch, _, { api }) => {
     dispatch(citiesSlice.actions.fetchCityPending())
     api
       .getCity(city)

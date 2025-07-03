@@ -5,8 +5,6 @@ import { CitiesList } from './components/cities-list/cities-list'
 function Cities() {
   return (
     <div className={styles.cities}>
-      {/* Cities
-      <Link to={href(ROUTES.CITY, { cityId: '1' })}>Hi</Link> */}
       <AddForm />
       <CitiesList />
     </div>

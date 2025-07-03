@@ -1,4 +1,4 @@
-import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { type PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit'
 
 export interface CityState {
   cities: City[]
@@ -21,6 +21,18 @@ const initialState: CityState = {
       ],
       main: {
         temp: 284.2,
+        feels_like: 282.5,
+        humidity: 60,
+      },
+      sys: {
+        country: 'US',
+      },
+      wind: {
+        speed: 4.1,
+        deg: 210,
+      },
+      clouds: {
+        all: 0,
       },
     },
     {
@@ -35,7 +47,19 @@ const initialState: CityState = {
         },
       ],
       main: {
-        temp: 284.2,
+        temp: 280.4,
+        feels_like: 278.6,
+        humidity: 75,
+      },
+      sys: {
+        country: 'GB',
+      },
+      wind: {
+        speed: 3.6,
+        deg: 180,
+      },
+      clouds: {
+        all: 90,
       },
     },
     {
@@ -50,7 +74,19 @@ const initialState: CityState = {
         },
       ],
       main: {
-        temp: 284.2,
+        temp: 289.2,
+        feels_like: 288.4,
+        humidity: 55,
+      },
+      sys: {
+        country: 'JP',
+      },
+      wind: {
+        speed: 2.5,
+        deg: 150,
+      },
+      clouds: {
+        all: 40,
       },
     },
     {
@@ -65,7 +101,19 @@ const initialState: CityState = {
         },
       ],
       main: {
-        temp: 284.2,
+        temp: 285.6,
+        feels_like: 284.1,
+        humidity: 65,
+      },
+      sys: {
+        country: 'FR',
+      },
+      wind: {
+        speed: 3.0,
+        deg: 200,
+      },
+      clouds: {
+        all: 20,
       },
     },
     {
@@ -80,7 +128,19 @@ const initialState: CityState = {
         },
       ],
       main: {
-        temp: 284.2,
+        temp: 278.4,
+        feels_like: 276.8,
+        humidity: 80,
+      },
+      sys: {
+        country: 'AU',
+      },
+      wind: {
+        speed: 5.4,
+        deg: 300,
+      },
+      clouds: {
+        all: 75,
       },
     },
   ],
@@ -95,7 +155,11 @@ export const citiesSlice = createSlice({
     selectCities: state => state.cities,
     selectIsFetchCitiesPending: state => state.fetchCityStatus === 'pending',
     selectIsFetchCitiesIdle: state => state.fetchCityStatus === 'idle',
-    selectCityByName: state => (name: string) => state.cities.find(city => city.name === name),
+    selectCityById: createSelector(
+      (state: CityState) => state.cities,
+      (_: CityState, id: number) => id,
+      (cities, id) => cities.find(city => city.id === id),
+    ),
   },
   reducers: {
     fetchCityPending: state => {

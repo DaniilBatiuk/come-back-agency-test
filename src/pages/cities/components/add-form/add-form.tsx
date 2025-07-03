@@ -8,8 +8,8 @@ import { addCity } from './model/add-city'
 
 export const AddForm: React.FC = () => {
   const isPending = useAppSelector(citiesSlice.selectors.selectIsFetchCitiesPending)
-  const selectCityByName = useAppSelector(citiesSlice.selectors.selectCityByName)
   const dispatch = useAppDispatch()
+  const cities = useAppSelector(citiesSlice.selectors.selectCities)
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -17,7 +17,8 @@ export const AddForm: React.FC = () => {
     const formData = new FormData(event.currentTarget)
     const city = formData.get('city') as string
 
-    if (selectCityByName(city)) {
+    const cityExists = cities.some(c => c.name === city)
+    if (cityExists) {
       toast.error('City is already added')
       return
     }
