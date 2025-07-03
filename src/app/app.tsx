@@ -1,10 +1,11 @@
 import { Provider } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+import { PersistGate } from 'redux-persist/integration/react'
 
 import { Header } from '@/components/shared'
 
-import { store } from '@/store'
+import { persistor, store } from '@/store'
 
 import styles from './app.module.scss'
 
@@ -14,7 +15,9 @@ export const App = () => {
       <Header />
       <div className={styles.main__container}>
         <Provider store={store}>
-          <ToastContainer stacked /> <Outlet />
+          <PersistGate loading={null} persistor={persistor}>
+            <ToastContainer stacked /> <Outlet />
+          </PersistGate>
         </Provider>
       </div>
     </div>
