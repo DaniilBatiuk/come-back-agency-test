@@ -3,6 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "Implemented a site for adding/removing/viewing weather in cities. Added saving to LocalStorage. And implemented a page with detailed information about the weather in the city and a chart with the forecast of the temperature in the city.",
+  "author": {
+    "name": "Daniil Batiuk",
+    "url": "https://github.com/DaniilBatiuk"
+  },
+  "homepage": "https://github.com/DaniilBatiuk/come-back-agency-test",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DaniilBatiuk/come-back-agency-test"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

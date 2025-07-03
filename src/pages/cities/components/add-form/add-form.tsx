@@ -1,10 +1,9 @@
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-toastify'
 
-import { citiesSlice, useAppDispatch, useAppSelector } from '@/store'
+import { addCity, citiesSlice, useAppDispatch, useAppSelector } from '@/store'
 
 import styles from './add-form.module.scss'
-import { addCity } from './model/add-city'
 
 export const AddForm: React.FC = () => {
   const isPending = useAppSelector(citiesSlice.selectors.selectIsFetchCitiesPending)
