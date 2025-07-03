@@ -1,8 +1,6 @@
 import { Button } from '@mui/material'
 
-import { useAppDispatch, useAppSelector } from '@/store'
-
-import { refreshCity } from './model/refresh-city'
+import { refreshCity, useAppDispatch, useAppSelector } from '@/store'
 
 interface RefreshButtonProps {
   city: { name: string; id: number }

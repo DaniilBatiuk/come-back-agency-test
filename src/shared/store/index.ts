@@ -1,2 +1,5 @@
 export * from './cities/cities.slice'
+export * from './cities/thunks/add-city'
+export * from './cities/thunks/refresh-all-cities'
+export * from './cities/thunks/refresh-city'
 export * from './store'
