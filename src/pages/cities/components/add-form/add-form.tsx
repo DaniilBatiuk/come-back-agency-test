@@ -1,23 +1,28 @@
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-toastify'
 
-import { citiesSlice, useAppSelector } from '@/store'
-
-import { api } from '@/models'
+import { citiesSlice, useAppDispatch, useAppSelector } from '@/store'
 
 import styles from './add-form.module.scss'
+import { addCity } from './model/add-city'
 
 export const AddForm: React.FC = () => {
   const isPending = useAppSelector(citiesSlice.selectors.selectIsFetchCitiesPending)
+  const selectCityByName = useAppSelector(citiesSlice.selectors.selectCityByName)
+  const dispatch = useAppDispatch()
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
     const formData = new FormData(event.currentTarget)
     const city = formData.get('city') as string
-    api
-      .getCity(city)
-      .then(res => console.log(res))
-      .catch(() => toast.error("City doesn't exist"))
+
+    if (selectCityByName(city)) {
+      toast.error('City is already added')
+      return
+    }
+
+    dispatch(addCity(city))
   }
 
   return (

@@ -1,6 +1,10 @@
+import { Provider } from 'react-redux'
 import { Outlet } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
-import { Header, ToastWrapper, WrapperProvider } from '@/components/shared'
+import { Header } from '@/components/shared'
+
+import { store } from '@/store'
 
 import styles from './app.module.scss'
 
@@ -9,11 +13,9 @@ export const App = () => {
     <div className={styles.wrapper} id='wrapper'>
       <Header />
       <div className={styles.main__container}>
-        <WrapperProvider>
-          <ToastWrapper>
-            <Outlet />
-          </ToastWrapper>
-        </WrapperProvider>
+        <Provider store={store}>
+          <ToastContainer stacked /> <Outlet />
+        </Provider>
       </div>
     </div>
   )

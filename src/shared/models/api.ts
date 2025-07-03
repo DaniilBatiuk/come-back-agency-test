@@ -3,22 +3,18 @@ import { z } from 'zod'
 const CityDtoSchema = z.object({
   id: z.number(),
   name: z.string(),
-  weather: z.object({
-    id: z.number(),
-    main: z.string(),
-    description: z.string(),
-    icon: z.string(),
-  }),
+  weather: z
+    .object({
+      id: z.number(),
+      main: z.string(),
+      description: z.string(),
+      icon: z.string(),
+    })
+    .array(),
   main: z.object({
     temp: z.number(),
   }),
 })
-
-// export const baseApi = createApi({
-//   baseQuery: fetchBaseQuery({ baseUrl }),
-//   tagTypes: ['Cities'],
-//   endpoints: () => ({}),
-// })
 
 export const api = {
   getCity: (city: string) => {

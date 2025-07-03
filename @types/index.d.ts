@@ -6,7 +6,7 @@ type City = {
     main: string
     description: string
     icon: string
-  }
+  }[]
   main: {
     temp: number
   }
