@@ -1,69 +1,35 @@
-# React + TypeScript + Vite
+<div align="center"> 
+  <img src="https://8yseas2m4u.ufs.sh/f/O6pySqs2by3eFP8PI0dswPENz5AfW8BReDl6vqXLj7ZxKHaQ" alt="Logo">
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🔥 [Come Back Agency Test](https://come-back-agency-test.vercel.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project includes the following features:
 
-## Expanding the ESLint configuration
+- CRUD operations for cities
+- LocalStorage persistence
+- Detailed city page with an interactive temperature forecast chart
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Core Technologies
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This project is built using modern technologies:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 19** — A library for building user interfaces
+- **React Router v7** — Declarative routing for React applications
+- **Redux Toolkit** — Simplified and modern Redux state management
+- **Redux Persist** — Persist and rehydrate Redux state using localStorage
+- **MUI (Material UI)** — Prebuilt accessible React UI components
+- **MUI Charts** — Charting library built on top of MUI
+- **React Toastify** — Toast notifications for React apps
+- **Zod** — Type-safe schema validation for data parsing
+- **Vite** — Fast and lightweight build tool
+- **TypeScript** — Strongly typed JavaScript
+- **ESLint + Prettier** — Code quality and formatting tools
+- **Husky + Lint-staged** — Git hooks for code quality before commits
+- **Sass** — CSS preprocessor
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Contact
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+If you have any questions or suggestions, feel free to reach out via **[Telegram](https://t.me/DaniilBatiuk)**.
