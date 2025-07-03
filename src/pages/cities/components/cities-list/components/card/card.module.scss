@@ -55,4 +55,11 @@
       color: var.$red;
     }
   }
+
+  &__link {
+    margin-top: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
