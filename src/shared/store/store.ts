@@ -5,6 +5,17 @@ import {
   createSelector,
 } from '@reduxjs/toolkit'
 import { useDispatch, useSelector, useStore } from 'react-redux'
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 import { api } from '@/models'
 
@@ -14,13 +25,28 @@ const extraArgument = {
   api,
 }
 
+const citiesPersistConfig = {
+  key: 'cities',
+  storage,
+  whitelist: ['cities'],
+}
+
+const persistedCitiesReducer = persistReducer(citiesPersistConfig, citiesSlice.reducer)
+
 export const store = configureStore({
   reducer: {
-    cities: citiesSlice.reducer,
+    cities: persistedCitiesReducer,
   },
-
-  middleware: getDefaultMiddleware => getDefaultMiddleware({ thunk: { extraArgument } }),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      thunk: { extraArgument },
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 })
+
+export const persistor = persistStore(store)
 
 export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
