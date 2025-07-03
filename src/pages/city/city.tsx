@@ -15,11 +15,11 @@ function City() {
   )
 
   if (!cityId) {
-    return <Navigate to={ROUTES.CITIES} replace />
+    return <Navigate to={ROUTES.HOME} replace />
   }
 
   if (!city) {
-    return <Navigate to={ROUTES.CITIES} replace />
+    return <Navigate to={ROUTES.HOME} replace />
   }
 
   return (

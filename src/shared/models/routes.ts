@@ -2,7 +2,6 @@ import 'react-router-dom'
 
 export const ROUTES = {
   HOME: '/',
-  CITIES: '/cities',
   CITY: '/cities/:cityId',
 } as const
 
