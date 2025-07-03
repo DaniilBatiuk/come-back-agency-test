@@ -24,8 +24,8 @@ function City() {
 
   return (
     <div>
-      <CityInfo city={city!} />
-      <TempCharts city={city!} />
+      <CityInfo city={city} />
+      <TempCharts city={city} />
     </div>
   )
 }

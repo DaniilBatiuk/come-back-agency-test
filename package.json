@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Implemented a site for adding/removing/viewing weather in cities. Added saving to LocalStorage. And implemented a page with detailed information about the weather in the city and a chart with the forecast of the temperature in the city.",
+  "description": "Developed a weather tracking web application featuring full CRUD functionality for cities, localStorage persistence, and a detailed city page with real-time weather data and an interactive temperature forecast chart.",
   "author": {
     "name": "Daniil Batiuk",
     "url": "https://github.com/DaniilBatiuk"
