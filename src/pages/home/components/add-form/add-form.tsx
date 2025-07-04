@@ -1,14 +1,20 @@
 import { Button, TextField } from '@mui/material'
 import { toast } from 'react-toastify'
 
-import { addCity, citiesSlice, useAppDispatch, useAppSelector } from '@/store'
+import {
+  addCity,
+  selectCities,
+  selectIsFetchCitiesPending,
+  useAppDispatch,
+  useAppSelector,
+} from '@/store'
 
 import styles from './add-form.module.scss'
 
 export const AddForm: React.FC = () => {
   const dispatch = useAppDispatch()
-  const isPending = useAppSelector(citiesSlice.selectors.selectIsFetchCitiesPending)
-  const cities = useAppSelector(citiesSlice.selectors.selectCities)
+  const isPending = useAppSelector(selectIsFetchCitiesPending)
+  const cities = useAppSelector(selectCities)
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()

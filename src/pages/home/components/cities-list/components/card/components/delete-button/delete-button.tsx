@@ -1,6 +1,6 @@
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 
-import { citiesSlice, useAppDispatch } from '@/store'
+import { deleteCity, useAppDispatch } from '@/store'
 
 import styles from '../../card.module.scss'
 
@@ -12,7 +12,7 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({ cityId }: DeleteButt
   const dispatch = useAppDispatch()
 
   const onClick = () => {
-    dispatch(citiesSlice.actions.deleteCity({ cityId }))
+    dispatch(deleteCity({ cityId }))
   }
 
   return (

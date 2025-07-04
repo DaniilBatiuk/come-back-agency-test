@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link, href } from 'react-router-dom'
 
 import { kelvinToCelsius } from '@/helpers'
@@ -23,7 +24,7 @@ interface CardProps {
   }
 }
 
-export const Card: React.FC<CardProps> = ({ city }: CardProps) => {
+export const Card: React.FC<CardProps> = React.memo(({ city }: CardProps) => {
   const imageUrl = `${import.meta.env.VITE_WEATHER_URL_ICON + city.weather[0].icon}.png`
 
   return (
@@ -39,4 +40,4 @@ export const Card: React.FC<CardProps> = ({ city }: CardProps) => {
       </Link>
     </div>
   )
-}
+})

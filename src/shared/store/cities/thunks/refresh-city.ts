@@ -1,18 +1,18 @@
 import { toast } from 'react-toastify'
 
-import { type AppThunk, citiesSlice } from '@/store'
+import { type AppThunk, refreshCityComplete, refreshCityPending, refreshSingleCity } from '@/store'
 
 export const refreshCity = (city: { name: string; id: number }): AppThunk => {
   return async (dispatch, _, { api }) => {
-    dispatch(citiesSlice.actions.refreshCityPending({ cityId: city.id }))
+    dispatch(refreshCityPending({ cityId: city.id }))
     api
       .getCity(city.name)
       .then(res => {
-        dispatch(citiesSlice.actions.refreshCity(res))
-        dispatch(citiesSlice.actions.refreshCityComplete())
+        dispatch(refreshSingleCity(res))
+        dispatch(refreshCityComplete())
       })
       .catch(() => {
-        dispatch(citiesSlice.actions.refreshCityComplete())
+        dispatch(refreshCityComplete())
         toast.error('Something went wrong')
       })
   }

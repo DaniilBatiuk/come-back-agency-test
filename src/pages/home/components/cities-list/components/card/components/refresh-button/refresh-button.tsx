@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 
-import { refreshCity, useAppDispatch, useAppSelector } from '@/store'
+import { refreshCity, selectRefreshingCityId, useAppDispatch, useAppSelector } from '@/store'
 
 interface RefreshButtonProps {
   city: { name: string; id: number }
@@ -8,7 +8,7 @@ interface RefreshButtonProps {
 
 export const RefreshButton: React.FC<RefreshButtonProps> = ({ city }: RefreshButtonProps) => {
   const dispatch = useAppDispatch()
-  const refreshingId = useAppSelector(state => state.cities.refreshingCityId)
+  const refreshingId = useAppSelector(selectRefreshingCityId)
 
   const isRefreshing = city.id === refreshingId
 
