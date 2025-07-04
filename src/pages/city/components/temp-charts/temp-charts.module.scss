@@ -1,0 +1,17 @@
+@use 'styles/variables.scss' as var;
+
+.charts {
+  margin-top: 40px;
+  @include var.adaptive-value-px(width, 300, 600);
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+}

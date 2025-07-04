@@ -1,0 +1,11 @@
+@use 'styles/variables.scss' as var;
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  &__input {
+    @include var.adaptive-value-px(width, 270, 400);
+  }
+}

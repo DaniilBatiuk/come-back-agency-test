@@ -1,4 +1,6 @@
-import { createBrowserRouter, redirect } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
+
+import { Spinner } from '@/components/shared'
 
 import { ROUTES } from '@/models'
 
@@ -9,16 +11,14 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: ROUTES.CITIES,
-        lazy: () => import('@/pages/cities/cities'),
+        path: ROUTES.HOME,
+        lazy: () => import('@/pages/home/home'),
+        HydrateFallback: () => <Spinner />,
       },
       {
         path: ROUTES.CITY,
         lazy: () => import('@/pages/city/city'),
-      },
-      {
-        path: ROUTES.HOME,
-        loader: () => redirect(ROUTES.CITIES),
+        HydrateFallback: () => <Spinner />,
       },
     ],
   },

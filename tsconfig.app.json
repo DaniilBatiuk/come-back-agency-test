@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
+    "target": "ES2023",
     "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -24,19 +24,19 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/ui": ["./src/shared/components/ui"],
-      "@/components/shared": ["./src/shared/components/shared"],
-      "@/store": ["./src/shared/store"],
-      "@/lib": ["./src/shared/lib"],
-      "@/actions": ["./src/shared/actions"],
-      "@/constants": ["./src/shared/constants"],
-      "@/validators": ["./src/shared/validators"],
-      "@/hooks": ["./src/shared/hooks"],
-      "@/helpers": ["./src/shared/helpers"],
+      "@/lib": ["src/shared/lib"],
+      "@/actions": ["src/shared/actions"],
+      "@/constants": ["src/shared/constants"],
+      "@/validators": ["src/shared/validators"],
+      "@/hooks": ["src/shared/hooks"],
+      "@/helpers": ["src/shared/helpers"],
+      "@/store": ["src/shared/store"],
+      "@/components/ui": ["src/shared/components/ui"],
+      "@/components/shared": ["src/shared/components/shared"],
       "@/models": ["src/shared/models"],
-      "@/pages": ["./src/pages"],
+      "@/pages": ["src/pages"],
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "**/*.ts", "test"]
 }
