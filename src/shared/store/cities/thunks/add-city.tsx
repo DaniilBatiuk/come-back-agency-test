@@ -1,15 +1,15 @@
 import { toast } from 'react-toastify'
 
-import { type AppThunk, citiesSlice } from '@/store'
+import { type AppThunk, fetchCityFailed, fetchCityPending, fetchCitySuccess } from '@/store'
 
 export const addCity = (city: string): AppThunk => {
   return async (dispatch, _, { api }) => {
-    dispatch(citiesSlice.actions.fetchCityPending())
+    dispatch(fetchCityPending())
     api
       .getCity(city)
-      .then(res => dispatch(citiesSlice.actions.fetchCitySuccess(res)))
+      .then(res => dispatch(fetchCitySuccess(res)))
       .catch(() => {
-        dispatch(citiesSlice.actions.fetchCityFailed())
+        dispatch(fetchCityFailed())
         toast.error("City doesn't exist")
       })
   }
